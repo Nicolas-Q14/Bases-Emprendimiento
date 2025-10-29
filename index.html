@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skin Match — Bases para piel</title>
+  <meta name="description" content="Skin Match - Encuentra tu base ideal" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS (animaciones on-scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header" class="header transparent">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <div class="logo">SM</div>
+        <div class="brand-text">
+          <h1>Skin Match</h1>
+          <small>Bases que se adaptan a tu piel</small>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+        <div class="menu" id="menu">
+          <a href="#productos" data-scroll>Productos</a>
+          <a href="#nosotros" data-scroll>Nosotros</a>
+          <a href="#reviews" data-scroll>Reseñas</a>
+          <a href="#contacto" data-scroll>Contacto</a>
+        </div>
+        <a class="cta" href="#productos" data-scroll>Comprar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- LANDING / HERO FULLSCREEN -->
+  <section id="landing" class="landing">
+    <div class="landing-overlay"></div>
+    <div class="landing-content wrap" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="landing-title">Encuentra la base perfecta para tu piel</h2>
+      <p class="landing-desc">Bases líquidas, mate, glow y compactas. Descubre fórmulas para cada tono y subtono.</p>
+      <div class="landing-cta">
+        <button class="cta" id="btnShop" data-scroll data-target="#productos">Explorar bases</button>
+        <button class="add-btn" onclick="openToneQuiz()">Guía de tonos</button>
+      </div>
+      <div class="landing-sub" data-aos="fade-up" data-aos-delay="300">
+        <small>Vegano · Cruelty-free · Envíos a todo el país</small>
+      </div>
+    </div>
+
+    <a href="#productos" class="scroll-down" data-scroll aria-label="Bajar a productos">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- MAIN SITE -->
+  <main class="wrap site-content">
+
+    <!-- HERO COMPACT -->
+    <section class="hero-compact" id="heroCompact" data-aos="fade-down">
+      <div>
+        <h3>Catálogo de bases</h3>
+        <p class="muted">Solo bases para piel — seleccionadas por su cobertura y acabado.</p>
+      </div>
+      <div class="hero-actions">
+        <input id="searchInput" placeholder="Buscar base, ej. glow, mate..." />
+        <button onclick="applySearch()">Buscar</button>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="section" data-aos="fade-up">
+      <h3 class="section-title">Bases</h3>
+
+      <div class="filters" id="filters">
+        <div class="chip active" data-filter="all">Todos</div>
+        <div class="chip" data-filter="liquida">Líquidas</div>
+        <div class="chip" data-filter="mate">Mate</div>
+        <div class="chip" data-filter="glow">Glow</div>
+        <div class="chip" data-filter="compacta">Compactas</div>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <!-- Productos generados por JS -->
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="section" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="section-title">Sobre Skin Match</h3>
+      <div class="about-grid">
+        <div>
+          <p class="muted">En Skin Match creemos que la base correcta cambia la confianza. Nuestras fórmulas priorizan piel saludable y acabado natural.</p>
+          <ul class="muted">
+            <a href="https://www.canva.com/design/DAGxT3SDERE/BZ9Pz5D_QV4sZQpGBLXT1w/view?utm_content=DAGxT3SDERE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8a634afbdc" 
+            target="_blank">
+            "Que es Skin Match"-Canva
+            </a>
+            <li>-Experimento</li>
+            <li>-Prototipo</li>
+            <li>-Encuesta</li>
+          </ul>
+        </div>
+        <div>
+          <img 
+            src="img/skinmatch.png" 
+            alt="Base Skin Match"
+            style="width:300px; height:300px; object-fit:contain; border-radius:10px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section id="reviews" class="section" data-aos="fade-up" data-aos-delay="150">
+      <h3 class="section-title">Reseñas</h3>
+      <div class="reviews">
+        <div class="review" data-aos="zoom-in" data-aos-delay="50">
+          <strong>Nicolas Quitian.</strong>
+          <p class="muted">La Base dejó mi piel radiante y sin sensación grasosa.</p>
+        </div>
+        <div class="review" data-aos="zoom-in" data-aos-delay="150">
+          <strong>Zharick G.</strong>
+          <p class="muted">La Base controla brillo toda la jornada.</p>
+        </div>
+        <div class="review" data-aos="zoom-in" data-aos-delay="250">
+          <strong>Yuli R.</strong>
+          <p class="muted">La base compacta es perfecta para retoques rápidos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="section-title">Contacto</h3>
+      <div class="contact-grid">
+        <form onsubmit="event.preventDefault();submitContact()" class="contact-form">
+          <label>Nombre</label>
+          <input id="contactName" required />
+          <label>Correo</label>
+          <input id="contactEmail" type="email" required />
+          <label>Mensaje</label>
+          <textarea id="contactMessage" rows="4"></textarea>
+          <button class="cta" type="submit">Enviar</button>
+        </form>
+        <div class="contact-info muted">
+          <p><strong>Dirección:</strong> Uiversidad Uniagustiniana</p>
+          <p><strong>Horario:</strong> Lun-Vie 9:00 - 18:00</p>
+          <p><strong>Email:</strong> hola@skinmatch.com</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer wrap" data-aos="fade-up">
+    <div>
+      <strong>Skin Match</strong>
+      <p class="muted">Bases responsables y tonos reales.</p>
+    </div>
+    <div class="footer-links muted">
+      <a href="#productos" data-scroll>Catálogo</a>
+      <a href="#nosotros" data-scroll>Nosotros</a>
+      <a href="#contacto" data-scroll>Contacto</a>
+    </div>
+    <div class="subscribe">
+      <input id="footEmail" placeholder="Tu correo" />
+      <button class="add-btn" onclick="subscribe()">OK</button>
+    </div>
+  </footer>
+
+  <!-- MODAL PRODUCTO -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div id="modalContent"></div>
+      <div class="modal-actions">
+        <button class="add-btn" onclick="closeModal()">Cerrar</button>
+        <button class="cta" onclick="addToCartFromModal()">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS: Smooth Scroll + AOS + main -->
+  <script src="https://unpkg.com/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+  <script>
+    AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+    const scroll = new SmoothScroll('a[data-scroll]', { speed: 700, offset: 72, speedAsDuration: true });
+    document.getElementById('btnShop')?.addEventListener('click', (e)=>{
+      e.preventDefault();
+      scroll.animateScroll(document.querySelector('#productos'));
+    });
+  </script>
+</body>
+</html>
